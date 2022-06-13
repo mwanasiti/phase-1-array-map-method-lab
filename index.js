@@ -1,3 +1,4 @@
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -11,6 +12,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function OneSentence(sentenceString) {
+  const words = sentenceString.split(" ");
+  // console.log(words);
+
+  const updatedSentence =  words.map( function(word) {
+    return word[0].toUpperCase() + word.substring(1);
+  }).join(" ");
+
+  return updatedSentence;
+}
+
+function titleCased() {
+  const morphedSentence = tutorials.map(OneSentence);
+  return morphedSentence;
 }
